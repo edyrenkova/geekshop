@@ -16,6 +16,7 @@ class BatteryList
         BatteryList() { m_count = 0;}
         bool addBattery(Battery ba);
         bool removeBattery(int id);
+        bool updateBattery(int id, string model, string brand, double price, int quantity, int capacity);
         
     friend ostream& operator<<(ostream& os, const BatteryList& ba);
     

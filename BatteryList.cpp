@@ -27,9 +27,27 @@ bool BatteryList::removeBattery(int id)
     return false;
 }
 
+
+bool BatteryList::updateBattery(int id, string model, string brand, double price, int quantity, int capacity)
+{
+    for (int i = 0; i < m_count; i++)
+    {
+        if (id == m_list[i].getId())
+        {
+            m_list[i].setModel(model);
+            m_list[i].setBrand(brand);
+            m_list[i].setPrice(price);
+            m_list[i].setQuantity(quantity);
+            m_list[i].setCapacity(capacity);
+            return true;   
+        }
+    }
+    return false;
+}
+
 ostream& operator<<(ostream& os, const BatteryList& ba)
 {
-    os << "~~~Current Inventory of Camera~~~\n\n";
+    os << "~~~Current Inventory of Batteries~~~\n\n";
     for(int i = 0; i < ba.m_count; i ++)
     os << ba.m_list[i] << endl;
     return os;

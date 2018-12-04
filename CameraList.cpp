@@ -27,9 +27,27 @@ bool CameraList::removeCamera(int id)
     return false;
 }
 
+
+bool CameraList::updateCamera(int id, string model, string brand, double price, int quantity, string aperture)
+{
+    for (int i = 0; i < m_count; i++)
+    {
+        if (id == m_list[i].getId())
+        {
+            m_list[i].setModel(model);
+            m_list[i].setBrand(brand);
+            m_list[i].setPrice(price);
+            m_list[i].setQuantity(quantity);
+            m_list[i].setAperture(aperture);
+            return true;   
+        }
+    }
+    return false;
+}
+
 ostream& operator<<(ostream& os, const CameraList& ca)
 {
-    os << "~~~Current Inventory of Camera~~~\n\n";
+    os << "~~~Current Inventory of Cameras~~~\n\n";
     for(int i = 0; i < ca.m_count; i ++)
     os << ca.m_list[i] << endl;
     return os;

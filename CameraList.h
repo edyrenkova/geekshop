@@ -16,6 +16,7 @@ class CameraList
         CameraList() { m_count = 0;}
         bool addCamera(Camera ca);
         bool removeCamera(int id);
+        bool updateCamera(int id, string model, string brand, double price, int quantity, string aperture);
         
     friend ostream& operator<<(ostream& os, const CameraList& ca);
     
