@@ -1,16 +1,16 @@
 #include <iostream>
 #include <string>
 
-#include "Camera.h"
-#include "CameraList.h"
+#include "Item.h"
+#include "ItemList.h"
 int main(int argv, char* argc[])
 {
 
-	string name, brand;
-	double price;
-	int quantity, date, id;
+	string brand, model;
+	double length, width, thickness, price;
+	int id, quantity;
 	
-	CameraList cl;
+	ItemList il;
 
 	int choice = 0;
 
@@ -18,13 +18,13 @@ int main(int argv, char* argc[])
 		cout << "************************************************************************" << endl;
 		cout << "**                                                                    **" << endl;
 		cout << "**                          WELCOME TO THE                            **" << endl;
-		cout << "**                            TECH SHOP                               **" << endl;
+		cout << "**                          ITEM SHOP                            **" << endl;
 		cout << "**                                                                    **" << endl;
 		cout << "************************************************************************" << endl;
 		cout << "** Please make a choice from the following options:                   **" << endl;
-		cout << "** 1)  Add a new Camera                                               **" << endl;
-		cout << "** 2)  Remove a Camera                                                **" << endl;
-		cout << "** 3)  Display all Cameras                                            **" << endl;
+		cout << "** 1)  Add a new Item to Inventory                               **" << endl;
+		cout << "** 2)  Remove a Item from Inventory                              **" << endl;
+		cout << "** 3)  Display all Items in Inventory                            **" << endl;
 		cout << "** 4)  Exit                                                           **" << endl;
 		cout << "************************************************************************" << endl;
 		cout << ">> ";
@@ -34,23 +34,27 @@ int main(int argv, char* argc[])
 		{
 		case 1:
 		{
-			cout << "Enter Camera Name: ";
-			getline(cin, name);
-			cout << "Enter Brand Name: ";
+			cout << "Enter Brand: ";
 			getline(cin, brand);
-			cout << "Enter Price Paid: ";
-			cin >> price;
-			cout << "Enter Number of Items Purchased: ";
+			cout << "Enter Model: ";
+			getline(cin, model);
+			cout << "Enter Length: ";
+			cin >> length;
+			cout << "Enter Width: ";
+			cin >> width;
+			cout << "Enter Thickness: ";
+			cin >> thickness;
+			cout << "Enter Quantity: ";
 			cin >> quantity;
-			cout << "Enter Date of Purchase: ";
-			cin >> date;
+			cout << "Enter Price $";
+			cin >> price;
 			
-			Camera ca(name, brand, price, quantity, date);
-			if(cl.addCamera(ca))
-			cout<< "camera added successfully!" << endl;
+			Item it(brand, model, length, width, thickness, quantity, price);
+			if(il.addItem(it))
+			cout<< "board added successfully!" << endl;
 			
 			else
-			cout<< "camera cannot be added." << endl;
+			cout<< "Inventory full." << endl;
 		
 			cout << endl;
 			break;
@@ -60,21 +64,14 @@ int main(int argv, char* argc[])
 			cout << "\nWhich ID# would you like to remove? (or -1 to cancel) >> ";
 			cin >> id;
 			
-			if (cl.removeCamera(id))
-			cout<<"Camera removed successfully!"<<endl;
-			else
-			cout<<"Unable to remove, please try again."<<endl;
-			
-			break;
-			
 			break;
 		case 3:
             
-            cout << cl << endl;
+            cout << il << endl;
 
 			break;
 		case 4:
-			cout << "You have exited!" << endl;
+			cout << "Tou have exited!" << endl;
 			break;
 		}
 

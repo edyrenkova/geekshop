@@ -1,0 +1,39 @@
+# Project: TechProduct
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = TechProduct.o Headphones.o HeadphonesDemo.o HeadphonesList.o $(RES)
+LINKOBJ  = TechProduct.o Headphones.o HeadphonesDemo.o HeadphonesList.o $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib"  
+INCS =  -I"C:/Dev-Cpp/include" 
+CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include" 
+BIN  = TechProduct.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before TechProduct.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "TechProduct.exe" $(LIBS)
+
+TechProduct.o: TechProduct.cpp
+	$(CPP) -c TechProduct.cpp -o TechProduct.o $(CXXFLAGS)
+
+Headphones.o: Headphones.cpp
+	$(CPP) -c Headphones.cpp -o Headphones.o $(CXXFLAGS)
+
+HeadphonesDemo.o: HeadphonesDemo.cpp
+	$(CPP) -c HeadphonesDemo.cpp -o HeadphonesDemo.o $(CXXFLAGS)
+
+HeadphonesList.o: HeadphonesList.cpp
+	$(CPP) -c HeadphonesList.cpp -o HeadphonesList.o $(CXXFLAGS)
