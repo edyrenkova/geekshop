@@ -1,24 +1,14 @@
 #include "Camera.h"
 #include <string>
 
-int Camera::c_nextId = 10000;
-Camera::Camera()
+Camera::Camera():TechProduct::TechProduct()
 {
-	m_id = 0;
-	m_model = "";
-	m_brand = "";
-	m_price = 0.0;
-	m_quantity = 0;
 	m_aperture = "";
 }
 
-Camera::Camera(string model, string brand, double price = 0.0, int quantity = 0, string aperture = "")
+Camera::Camera(string model, string brand, double price = 0.0, int quantity = 0, string aperture = ""):TechProduct::TechProduct(brand, model, price, quantity)
 {
-    m_id = c_nextId++;
-	m_model = model;
-	m_brand = brand;
-	m_price = price;
-	m_quantity = quantity;
+{
 	m_aperture = aperture;
 }
 
@@ -33,3 +23,23 @@ ostream& operator<<(ostream& os, const Camera& c)
 		<< ", item quantity =" << c.m_quantity << ", aperture =" << c.m_aperture << "]";
 	return os;
 }
+void Camera::update(){
+    string brand, model, aperture;
+    double price;
+    int quantity;
+    cin.ignore(INT_MAX, '\n');
+			cout << "\nEnter Updated Brand: ";
+			getline(cin, brand);
+			cout << "Enter Updated Model: ";
+			getline(cin, model);
+			cout << "Enter Updated Quantity: ";
+			cin >> quantity;
+			cout << "Enter Updated Aperture";
+			cin >> aperture;
+			cout << "Enter Updated Price $";
+			cin >> price;
+		    setBrand(brand);
+			setModel(model);
+			setQuantity(quantity);
+			setAperture(aperture);
+			setPrice(price);
