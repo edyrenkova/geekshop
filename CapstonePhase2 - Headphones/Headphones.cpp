@@ -31,3 +31,35 @@ ostream& operator<<(ostream& os, const Headphones& t)
        << ", Impedance(Ohms)=" << t.m_impedance << ", Quantity= " << t.m_quantity << ", Price=$" << t.m_price << "]";
 	return os;
 }
+void Headphones::print()
+{
+    cout << "Headphones [ID#" << m_id << ", Brand=" << m_brand << ", Model=" << m_model << ", Driver Size= " << m_driverSize 
+       << ", Impedance(Ohms)=" << m_impedance << ", Quantity= " << m_quantity << ", Price=$" << m_price << "]";
+}
+void Headphones::update() 
+{
+    string model, brand, driverSize;
+    int quantity, impedance;
+    double price;
+
+			cout << "Enter Updated Brand: ";
+			getline(cin,brand);
+			cout << "Enter Updated Model: ";
+			getline(cin, model);
+			cout << "Enter Updated Driver Size (small, medium, large): ";
+			getline(cin, driverSize);
+            cout << "Enter Updated Impedance(Ohms): ";
+			cin >> impedance;
+			cout << "Enter Updated Quantity: ";
+			cin >> quantity;
+			cout << "Enter Updated Price $";
+			cin >> price;
+
+            setBrand(brand);
+            setModel(model);
+            setDriverSize(driverSize);
+            setImpedance(impedance);
+            setQuantity(quantity);
+            setPrice(price);
+            
+}

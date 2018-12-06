@@ -40,6 +40,8 @@ class Headphones : public TechProduct
 	    bool operator==(const Headphones& other);
 	    ostream operator<<(const Headphones& other);
         friend ostream& operator<<(ostream& os, const Headphones& t);
+        void print();
+        void update();
         
 };
 #endif
