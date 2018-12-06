@@ -1,7 +1,7 @@
 [Project]
 FileName=geekshopTest.dev
 Name=geekshopTest
-UnitCount=13
+UnitCount=11
 Type=1
 Ver=1
 ObjFiles=
@@ -60,7 +60,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit5]
-FileName=IC26_CapstonePhase1Drone.cpp
+FileName=TechProductMenu.cpp
 CompileCpp=1
 Folder=geekshopTest
 Compile=1
@@ -119,16 +119,6 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit11]
-FileName=VoiceAssistantList.cpp
-CompileCpp=1
-Folder=geekshopTest
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
-
 [Unit12]
 FileName=VoiceAssistantList.h
 CompileCpp=1
@@ -171,6 +161,16 @@ AutoIncBuildNr=0
 FileName=Drone.cpp
 CompileCpp=1
 Folder=geekshopTest
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit11]
+FileName=TechProductList.cpp
+CompileCpp=1
+Folder=
 Compile=1
 Link=1
 Priority=1000

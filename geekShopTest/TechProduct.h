@@ -26,11 +26,12 @@ public:
 	inline string getModel() const { return m_model; }
 	inline double getPrice() const { return m_price; }
 	inline int getQuantity() const { return m_quantity; }
-	void update();
+	
 	inline void setBrand(string brand) { m_brand = brand; }
 	inline void setModel(string model) { m_model = model; }
 	inline void setPrice(double price) { m_price = price; }
 	inline void setQuantity(int quantity) { m_quantity = quantity; }
+    virtual void update();
 };
 
 #endif

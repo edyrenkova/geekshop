@@ -1,6 +1,6 @@
 #include "VoiceAssistant.h"
 
-VoiceAssistant::VoiceAssistant():TechProduct::TechProduct()
+VoiceAssistant::VoiceAssistant() : TechProduct()
 {
     m_searchEngine="";
 	m_color="";
@@ -28,5 +28,29 @@ ostream& operator<<(ostream& os, const VoiceAssistant& d)
 }
 
 void VoiceAssistant::update(){
-    
+     string brand, model, searchEngine, color;
+     double weight, price;
+    int quantity;
+    cin.ignore(INT_MAX, '\n');
+			cout << "\nEnter Updated Brand: ";
+			getline(cin, brand);
+			cout << "Enter Updated Model: ";
+			getline(cin, model);
+			cout << "Enter Updated Search Engine: ";
+			getline(cin, searchEngine);
+			cout << "Enter Updated Color: ";
+			cin >> color;
+			cout << "Enter Updated weight: ";
+			cin >> weight;
+			cout << "Enter Updated Quantity: ";
+			cin >> quantity;
+			cout << "Enter Updated Price $";
+			cin >> price;
+		    setBrand(brand);
+			setModel(model);
+			setSearchEngine(searchEngine);
+			setWeight(weight);
+			setColor(color);
+			setPrice(price);
+			setQuantity(quantity);
 }
