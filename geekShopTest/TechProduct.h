@@ -14,18 +14,19 @@ protected:
 	string m_model;
 	int m_quantity; 
 	double m_price;
-	TechProduct();
-	TechProduct(string brand, string model, double price, int quantity);
+	
 	
 
 public:
+    TechProduct();
+	TechProduct(string brand, string model, double price, int quantity);
     static const int MAX_INVENTORY=100;
 	inline int getId() const { return m_id; }
 	inline string getBrand() const { return m_brand; }
 	inline string getModel() const { return m_model; }
 	inline double getPrice() const { return m_price; }
 	inline int getQuantity() const { return m_quantity; }
-
+	void update();
 	inline void setBrand(string brand) { m_brand = brand; }
 	inline void setModel(string model) { m_model = model; }
 	inline void setPrice(double price) { m_price = price; }

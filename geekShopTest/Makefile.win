@@ -1,0 +1,48 @@
+# Project: geekshopTest
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = Drone.o DroneList.o IC26_CapstonePhase1Drone.o TechProduct.o VoiceAssistant.o VoiceAssistantList.o TechProductList.o $(RES)
+LINKOBJ  = Drone.o DroneList.o IC26_CapstonePhase1Drone.o TechProduct.o VoiceAssistant.o VoiceAssistantList.o TechProductList.o $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib"  
+INCS =  -I"C:/Dev-Cpp/include" 
+CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include" 
+BIN  = geekshopTest.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before geekshopTest.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "geekshopTest.exe" $(LIBS)
+
+Drone.o: Drone.cpp
+	$(CPP) -c Drone.cpp -o Drone.o $(CXXFLAGS)
+
+DroneList.o: DroneList.cpp
+	$(CPP) -c DroneList.cpp -o DroneList.o $(CXXFLAGS)
+
+IC26_CapstonePhase1Drone.o: IC26_CapstonePhase1Drone.cpp
+	$(CPP) -c IC26_CapstonePhase1Drone.cpp -o IC26_CapstonePhase1Drone.o $(CXXFLAGS)
+
+TechProduct.o: TechProduct.cpp
+	$(CPP) -c TechProduct.cpp -o TechProduct.o $(CXXFLAGS)
+
+VoiceAssistant.o: VoiceAssistant.cpp
+	$(CPP) -c VoiceAssistant.cpp -o VoiceAssistant.o $(CXXFLAGS)
+
+VoiceAssistantList.o: VoiceAssistantList.cpp
+	$(CPP) -c VoiceAssistantList.cpp -o VoiceAssistantList.o $(CXXFLAGS)
+
+TechProductList.o: TechProductList.cpp
+	$(CPP) -c TechProductList.cpp -o TechProductList.o $(CXXFLAGS)
