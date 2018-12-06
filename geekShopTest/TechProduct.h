@@ -32,6 +32,7 @@ public:
 	inline void setPrice(double price) { m_price = price; }
 	inline void setQuantity(int quantity) { m_quantity = quantity; }
     virtual void update();
+    virtual void print();
 };
 
 #endif

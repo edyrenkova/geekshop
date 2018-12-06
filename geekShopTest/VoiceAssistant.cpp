@@ -19,12 +19,11 @@ bool VoiceAssistant::operator==(const VoiceAssistant& other) //compares only bra
 	&& m_price == other.m_price;
 }
 
-ostream& operator<<(ostream& os, const VoiceAssistant& d)
+void VoiceAssistant::print()
 {
-	os << "Voice Assistant [ID#" << d.m_id << ", Brand=" << d.m_brand << ", Model=" << d.m_model << ", Search Engine=" << d.m_searchEngine
-		<< ", Color=" << d.m_color << ", Weight=" << d.m_weight << " pounds, Quantity=" << d.m_quantity
-		<< ", Price=$" << d.m_price << "]";
-	return os;
+	cout << "Voice Assistant [ID#" << m_id << ", Brand=" << m_brand << ", Model=" << m_model << ", Search Engine=" << m_searchEngine
+		<< ", Color=" << m_color << ", Weight=" << m_weight << " pounds, Quantity=" << m_quantity
+		<< ", Price=$" << m_price << "]";
 }
 
 void VoiceAssistant::update(){

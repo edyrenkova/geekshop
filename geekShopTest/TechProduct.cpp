@@ -23,3 +23,7 @@ TechProduct::TechProduct(string brand, string model, double price=0, int quantit
 void TechProduct::update(){
     
 }
+
+void TechProduct::print(){
+    
+}
