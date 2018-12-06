@@ -28,7 +28,7 @@ public:
 
 	bool operator==(const Drone& other);
 
-	friend ostream& operator<<(ostream& os, const Drone& s);
+	void print();
 };
 
 #endif

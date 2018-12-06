@@ -1,6 +1,6 @@
 #include "VoiceAssistant.h"
 
-VoiceAssistant::VoiceAssistant():TechProduct::TechProduct()
+VoiceAssistant::VoiceAssistant() : TechProduct()
 {
     m_searchEngine="";
 	m_color="";
@@ -19,14 +19,37 @@ bool VoiceAssistant::operator==(const VoiceAssistant& other) //compares only bra
 	&& m_price == other.m_price;
 }
 
-ostream& operator<<(ostream& os, const VoiceAssistant& d)
+void VoiceAssistant::print()
 {
-	os << "Voice Assistant [ID#" << d.m_id << ", Brand=" << d.m_brand << ", Model=" << d.m_model << ", Search Engine=" << d.m_searchEngine
-		<< ", Color=" << d.m_color << ", Weight=" << d.m_weight << " pounds, Quantity=" << d.m_quantity
-		<< ", Price=$" << d.m_price << "]";
-	return os;
+	cout << "Voice Assistant [ID#" << m_id << ", Brand=" << m_brand << ", Model=" << m_model << ", Search Engine=" << m_searchEngine
+		<< ", Color=" << m_color << ", Weight=" << m_weight << " pounds, Quantity=" << m_quantity
+		<< ", Price=$" << m_price << "]";
 }
 
 void VoiceAssistant::update(){
-    
+     string brand, model, searchEngine, color;
+     double weight, price;
+    int quantity;
+    cin.ignore(INT_MAX, '\n');
+			cout << "\nEnter Updated Brand: ";
+			getline(cin, brand);
+			cout << "Enter Updated Model: ";
+			getline(cin, model);
+			cout << "Enter Updated Search Engine: ";
+			getline(cin, searchEngine);
+			cout << "Enter Updated Color: ";
+			cin >> color;
+			cout << "Enter Updated weight: ";
+			cin >> weight;
+			cout << "Enter Updated Quantity: ";
+			cin >> quantity;
+			cout << "Enter Updated Price $";
+			cin >> price;
+		    setBrand(brand);
+			setModel(model);
+			setSearchEngine(searchEngine);
+			setWeight(weight);
+			setColor(color);
+			setPrice(price);
+			setQuantity(quantity);
 }

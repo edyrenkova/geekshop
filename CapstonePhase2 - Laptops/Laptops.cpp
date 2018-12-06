@@ -4,25 +4,16 @@
 int Laptops::inventorySize=100;
 int Laptops::t_nextId=10000;
 
-Laptops::Laptops()
+Laptops::Laptops() : TechProduct()
 {
-         m_id=0;
-         m_model="";
-         m_brand="";
+
          m_cpu="";
-         m_quantity=0;
-         m_price=0.0;
          m_storage=0;
 }
 
-Laptops::Laptops(string model, string brand, string cpu, int quantity, double price, int storage)
+Laptops::Laptops(string model, string brand, string cpu, int quantity, double price, int storage) : TechProduct(brand, model, price, quantity)
 {
-    m_id = t_nextId++;
-    m_model=model;
-    m_brand=brand;
     m_cpu=cpu;
-    m_quantity=quantity;
-    m_price=price;
     m_storage=storage;
 }
 

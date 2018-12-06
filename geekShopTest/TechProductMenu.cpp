@@ -17,15 +17,13 @@
 #include <iostream>
 #include <string>
 
-#include "Drone.h"
-#include "DroneList.h"
+#include "TechProduct.h"
+#include "TechProductList.h"
 
 
 int main(int argv, char* argc[])
-{
-	string brand, model, camera;
-	double time, diameter, price;
-	int id, quantity;
+{/*
+	
 
 	int userChoice = 0;
 	DroneList drones;
@@ -103,7 +101,12 @@ int main(int argv, char* argc[])
 
 	} while (userChoice != 5);
 	cout << endl;
-
+*/
 	system("PAUSE");
 	return EXIT_SUCCESS;
 }
+
+void innerMenu(){
+    
+}
+

@@ -2,7 +2,7 @@
 #include <string>
 
 
-Drone::Drone():TechProduct::TechProduct()
+Drone::Drone()
 {
     m_timePerCharge=0;
 	m_camera="";
@@ -21,12 +21,11 @@ bool Drone::operator==(const Drone& other) //compares only brand, model, camera,
 	&& m_price == other.m_price;
 }
 
-ostream& operator<<(ostream& os, const Drone& d)
+void Drone::print()
 {
-	os << "Drone [ID#" << d.m_id << ", Brand=" << d.m_brand << ", Model=" << d.m_model << ", Time per Charge=" << d.m_timePerCharge
-		<< " min, Camera=" << d.m_camera << ", Signal diameter=" << d.m_signalDiameter << " miles, Quantity=" << d.m_quantity
-		<< ", Price=$" << d.m_price << "]";
-	return os;
+	cout << "Drone [ID#" << m_id << ", Brand=" << m_brand << ", Model=" << m_model << ", Time per Charge=" << m_timePerCharge
+		<< " min, Camera=" << m_camera << ", Signal diameter=" << m_signalDiameter << " miles, Quantity=" << m_quantity
+		<< ", Price=$" << m_price << "]";
 }
 
 void Drone::update(){

@@ -21,9 +21,20 @@ TechProduct::TechProduct(string brand, string model, double price=0, int quantit
 }
 
 void TechProduct::update(){
-    
-}
-
-void TechProduct::print(){
-    
+    string brand, model;
+    int quantity;
+    double price;
+    cin.ignore(INT_MAX, '\n');
+			cout << "\nEnter Updated Brand: ";
+			getline(cin, brand);
+			cout << "Enter Updated Model: ";
+			getline(cin, model);
+			cout << "Enter Updated Quantity: ";
+			cin >> quantity;
+			cout << "Enter Updated Price $";
+			cin >> price;
+			setBrand(brand);
+			setModel(model);
+			setPrice(price);
+			setQuantity(quantity);
 }
