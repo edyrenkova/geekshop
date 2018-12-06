@@ -1,11 +1,12 @@
-#ifndef HEADPHONES_H
-#define HEADPHONES_H
+#include "TechProduct.h"
+#ifndef LAPTOPS_H
+#define LAPTOPS_H
 
 #include <iostream>
 
 using namespace std;
 
-class Headphones
+class Laptops : public TechProduct
 {
     private:
         static int inventorySize;
@@ -13,32 +14,32 @@ class Headphones
         int m_id;
         string m_model;
         string m_brand;
-        string m_driverSize;
+        string m_cpu;
         int m_quantity;
         double m_price;
-        int m_impedance;
+        int m_storage;
     public:
-        Headphones();
-        Headphones(string model, string brand, string driverSize, int quantity, double price, int impedance);
+        Laptops();
+        Laptops(string model, string brand, string cpu, int quantity, double price, int storage);
         
         inline int getId() const { return m_id; }
         inline string getBrand() const { return m_brand; }
 	    inline string getModel() const { return m_model; }
-        inline string getDriverSize() const { return m_driverSize; }
+        inline string getCpu() const { return m_cpu; }
 	    inline int getQuantity() const { return m_quantity; }
         inline double getPrice() const { return m_price; }
-        inline int getImpedance() const { return m_impedance; }
+        inline int getStorage() const { return m_storage; }
 
     	inline void setBrand(string brand) { m_brand = brand; }
     	inline void setModel(string model) { m_model = model; }
-        inline void setDriverSize(string driverSize) { m_driverSize = driverSize; }
+        inline void setCpu(string cpu) { m_cpu = cpu; }
     	inline void setQuantity(int quantity) { m_quantity = quantity; }
     	inline void setPrice(double price) { m_price = price; }
-        inline void setImpedance(int impedance) { m_impedance = impedance; }
+        inline void setStorage(int storage) { m_storage = storage; }
     	
-	    bool operator==(const Headphones& other);
-	    ostream operator<<(const Headphones& other);
-        friend ostream& operator<<(ostream& os, const Headphones& t);
+	    bool operator==(const Laptops& other);
+	    ostream operator<<(const Laptops& other);
+        friend ostream& operator<<(ostream& os, const Laptops& t);
         
 };
 #endif
