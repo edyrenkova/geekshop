@@ -2,7 +2,7 @@
 #include <string>
 
 
-Drone::Drone()
+Drone::Drone():TechProduct()
 {
     m_timePerCharge=0;
 	m_camera="";

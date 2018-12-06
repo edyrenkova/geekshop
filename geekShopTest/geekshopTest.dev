@@ -1,7 +1,7 @@
 [Project]
 FileName=geekshopTest.dev
 Name=geekshopTest
-UnitCount=10
+UnitCount=9
 Type=1
 Ver=1
 ObjFiles=
@@ -40,16 +40,6 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit4]
-FileName=TechProductMenu.cpp
-CompileCpp=1
-Folder=geekshopTest
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
-
-[Unit5]
 FileName=TechProduct.cpp
 CompileCpp=1
 Folder=geekshopTest
@@ -59,7 +49,7 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit6]
+[Unit5]
 FileName=TechProduct.h
 CompileCpp=1
 Folder=geekshopTest
@@ -69,7 +59,7 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit7]
+[Unit6]
 FileName=TechProductList.h
 CompileCpp=1
 Folder=geekshopTest
@@ -79,7 +69,7 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit8]
+[Unit7]
 FileName=VoiceAssistant.cpp
 CompileCpp=1
 Folder=geekshopTest
@@ -89,10 +79,20 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit9]
+[Unit8]
 FileName=VoiceAssistant.h
 CompileCpp=1
 Folder=geekshopTest
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit9]
+FileName=TechProductList.cpp
+CompileCpp=1
+Folder=
 Compile=1
 Link=1
 Priority=1000
@@ -168,7 +168,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit3]
-FileName=DroneList.h
+FileName=TechProductMenu.cpp
 CompileCpp=1
 Folder=geekshopTest
 Compile=1
