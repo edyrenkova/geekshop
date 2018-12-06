@@ -45,10 +45,10 @@ int main(int argc, char *argv[])
                 {
                     case 1:
                     {
-                        cout << "Enter Battery Model: ";
-                        getline(cin, model);
-                   		cout << "Enter Brand Name: ";
-                   		getline(cin, brand);
+                        cout << "Enter Battery Brand: ";
+                        getline(cin, brand);
+                   		cout << "Enter Brand Model: ";
+                   		getline(cin, model);
                    		cout << "Enter Price Paid: ";
                   		cin >> price;
                   		cout << "Enter Number of Items Purchased: ";
@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
                    		cout << "Enter capacity: ";
                    		cin >> capacity;
                    			
-                   		Battery ba(model, brand, price, quantity, capacity);
+                   		Battery ba(brand, model, price, quantity, capacity);
 			             if(bl.addBattery(ba))
                    		cout<< "Battery added successfully!" << endl;
 			
@@ -91,10 +91,10 @@ int main(int argc, char *argv[])
                    		if (id == -1) break;
                     
                    		cin.ignore(INT_MAX, '\n');
-                   		cout << "\nEnter Updated Name: ";
-                   		getline(cin, model);
-                   		cout << "Enter Updated Brand: ";
+                   		cout << "\nEnter Updated Brand: ";
                    		getline(cin, brand);
+                   		cout << "Enter Updated Model: ";
+                   		getline(cin, model);
                    		cout << "Enter Updated Price: ";
                    		cin >> price;
                    		cout << "Enter Updated Quantity: ";
@@ -141,10 +141,10 @@ int main(int argc, char *argv[])
                 {
                     case 1:
                     {
-                        cout << "Enter Camera Model: ";
-                        getline(cin, model);
-              			cout << "Enter Camera Number: ";
-                 		getline(cin, brand);
+                        cout << "Enter Camera Brand: ";
+                        getline(cin, brand);
+              			cout << "Enter Camera Model: ";
+                 		getline(cin, model);
                         cout << "Enter price";
                         cin >> price;
             			cout << "Enter quantity: ";
@@ -153,7 +153,7 @@ int main(int argc, char *argv[])
             			getline(cin, aperture);
                         
                                        			
-                        Camera ca(model, brand, price, quantity, aperture);
+                        Camera ca(brand, model, price, quantity, aperture);
                         if(cl.addCamera(ca))
                         cout<< "Camera added successfully!" << endl;
                         			
@@ -189,10 +189,10 @@ int main(int argc, char *argv[])
             			if (id == -1) break;
             
             			cin.ignore(INT_MAX, '\n');
-            			cout << "\nEnter Updated Model: ";
-            			getline(cin, model);
-            			cout << "Enter Updated Brand: ";
+            			cout << "\nEnter Updated Brand: ";
             			getline(cin, brand);
+            			cout << "Enter Updated Model: ";
+            			getline(cin, model);
             			cout << "Enter Updated price: ";
             			cin >> price;
             			cout << "Enter Updated quantity: ";
@@ -200,7 +200,7 @@ int main(int argc, char *argv[])
             			cout << "Enter Updated aperture: ";
             			getline(cin, aperture);
 
-                        if (cl.updateCamera(id, model, brand, price, quantity, aperture))
+                        if (cl.updateCamera(id, brand, model, price, quantity, aperture))
             			cout << "~~~Camera updated successfully!~~~" << endl;
             			
                         else

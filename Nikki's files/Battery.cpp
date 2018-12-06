@@ -1,24 +1,14 @@
 #include "Battery.h"
 #include <string>
 
-int Battery::b_nextId = 10000;
-Battery::Battery()
+
+Battery::Battery():TechProduct::TechProduct()
 {
-	m_id = 0;
-	m_model = "";
-	m_brand = "";
-	m_price = 0.0;
-	m_quantity = 0;
 	m_capacity = 0;
 }
 
-Battery::Battery(string model, string brand, double price = 0.0, int quantity = 0, int capacity = 0)
+Battery::Battery(string brand, string model, double price=0, int quantity=0, int capacity = 0 ):TechProduct::TechProduct(brand, model, price, quantity)
 {
-    m_id = b_nextId++;
-	m_model = model;
-	m_brand = brand;
-	m_price = price;
-	m_quantity = quantity;
 	m_capacity = capacity;
 }
 
@@ -31,6 +21,26 @@ bool  Battery::operator==(const Battery& other)
 ostream& operator<<(ostream& os, const Battery& b)
 {
 	os << "Battery[ID#" << b.m_id << ", Battery Model = " << b.m_model << ", Brand Name = " << b.m_brand << ", price =" << b.m_price
-		<< ", item quantity =" << b.m_quantity << ", date =" << b.m_capacity << "]";
+		<< ", item quantity =" << b.m_quantity << "Capacity =" << b.m_capacity << "]";
 	return os;
 }
+void Battery::update(){
+    string brand, model;
+    double price;
+    int quantity, capacity;
+    cin.ignore(INT_MAX, '\n');
+			cout << "\nEnter Updated Brand: ";
+			getline(cin, brand);
+			cout << "Enter Updated Model: ";
+			getline(cin, model);
+			cout << "Enter Updated Quantity: ";
+			cin >> quantity;
+			cout << "Enter Updated Capacity";
+			cin >> capacity;
+			cout << "Enter Updated Price $";
+			cin >> price;
+		    setBrand(brand);
+			setModel(model);
+			setQuantity(quantity);
+			setCapacity(capacity);
+			setPrice(price);

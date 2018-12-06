@@ -40,6 +40,8 @@ class Laptops : public TechProduct
 	    bool operator==(const Laptops& other);
 	    ostream operator<<(const Laptops& other);
         friend ostream& operator<<(ostream& os, const Laptops& t);
+        void print();
+        void update();
         
 };
 #endif
