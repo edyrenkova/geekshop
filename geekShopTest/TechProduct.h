@@ -31,8 +31,8 @@ public:
 	inline void setModel(string model) { m_model = model; }
 	inline void setPrice(double price) { m_price = price; }
 	inline void setQuantity(int quantity) { m_quantity = quantity; }
-    virtual void update();
-    virtual void print();
+    virtual void update()=0;
+    virtual void print()=0;
 };
 
 #endif
