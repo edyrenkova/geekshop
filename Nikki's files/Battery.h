@@ -18,24 +18,14 @@ private:
 	
 public:
 	Battery();
-	Battery(string, string, double, int, int);
-	inline int getId() const { return m_id; }
-	inline string getModel() const { return m_model; }
-	inline string getBrand() const { return m_brand; }
-	inline double getPrice() const { return m_price; }
-	inline int getQuantity() const { return m_quantity; }
+	Battery(string brand, string model, double price, int quantity, int capacity);
 	inline int getCapacity() const { return m_capacity; }
-
-	inline void setModel(string model) { m_model = model; }
-	inline void setBrand(string brand) { m_brand = brand; }
-	inline void setPrice(double price) { m_price = price; }
-	inline void setQuantity(int quantity) { m_quantity = quantity; }
+	void update();
 	inline void setCapacity(int capacity) { m_capacity = capacity; }
 	
 
 	bool operator==(const Battery& other);
-	ostream operator<<(const Battery& other);
 
-	friend ostream& operator<<(ostream& os, const Battery& b);
+	void print();
 };
 #endif

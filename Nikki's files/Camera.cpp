@@ -1,7 +1,7 @@
 #include "Camera.h"
 #include <string>
 
-Camera::Camera():TechProduct::TechProduct()
+Camera::Camera()
 {
 	m_aperture = "";
 }
