@@ -2,12 +2,12 @@
 #include <string>
 
 
-Battery::Battery():TechProduct::TechProduct()
+Battery::Battery()
 {
 	m_capacity = 0;
 }
 
-Battery::Battery(string brand, string model, double price=0, int quantity=0, int capacity = 0 ):TechProduct::TechProduct(brand, model, price, quantity)
+Battery::Battery(string brand, string model, double price = 0.0 , int quantity=0, int capacity = 0 ):TechProduct::TechProduct(brand, model, price, quantity)
 {
 	m_capacity = capacity;
 }
@@ -18,7 +18,7 @@ bool  Battery::operator==(const Battery& other)
 }
 
 
-ostream& operator<<(ostream& os, const Battery& b)
+void Drone::print()
 {
 	os << "Battery[ID#" << b.m_id << ", Battery Model = " << b.m_model << ", Brand Name = " << b.m_brand << ", price =" << b.m_price
 		<< ", item quantity =" << b.m_quantity << "Capacity =" << b.m_capacity << "]";
