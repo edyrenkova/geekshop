@@ -29,3 +29,35 @@ ostream& operator<<(ostream& os, const Laptops& t)
        << ", Storage(GB)=" << t.m_storage << ", Quantity= " << t.m_quantity << ", Price=$" << t.m_price << "]";
 	return os;
 }
+void Laptops::print()
+{
+    cout << "Laptops [ID#" << m_id << ", Brand=" << m_brand << ", Model=" << m_model << ", CPU name= " << m_cpu 
+       << ", Storage(GB)=" << m_storage << ", Quantity= " << m_quantity << ", Price=$" << m_price << "]";;
+}
+void Laptops::update() 
+{
+    string model, brand, cpu;
+    int quantity, storage;
+    double price;
+
+	       	cout << "Enter Updated Brand: ";
+			getline(cin, brand);
+			cout << "Enter Updated Model: ";
+			getline(cin, model);
+			cout << "Enter Updated CPU description: ";
+			getline(cin, cpu);
+            cout << "Enter Updated Storage(Ohms): ";
+			cin >> storage;
+			cout << "Enter Updated Quantity: ";
+			cin >> quantity;
+			cout << "Enter Updated Price $";
+			cin >> price;
+
+            setBrand(brand);
+            setModel(model);
+            setCpu(cpu);
+            setStorage(storage);
+            setQuantity(quantity);
+            setPrice(price);
+            
+}
