@@ -1,0 +1,54 @@
+# Project: geekshopTest
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = Drone.o TechProductMenu.o TechProduct.o VoiceAssistant.o TechProductList.o Headphones.o HeadphonesList.o Laptops.o LaptopsList.o $(RES)
+LINKOBJ  = Drone.o TechProductMenu.o TechProduct.o VoiceAssistant.o TechProductList.o Headphones.o HeadphonesList.o Laptops.o LaptopsList.o $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib"  
+INCS =  -I"C:/Dev-Cpp/include" 
+CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include" 
+BIN  = geekshopTest.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before geekshopTest.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "geekshopTest.exe" $(LIBS)
+
+Drone.o: Drone.cpp
+	$(CPP) -c Drone.cpp -o Drone.o $(CXXFLAGS)
+
+TechProductMenu.o: TechProductMenu.cpp
+	$(CPP) -c TechProductMenu.cpp -o TechProductMenu.o $(CXXFLAGS)
+
+TechProduct.o: TechProduct.cpp
+	$(CPP) -c TechProduct.cpp -o TechProduct.o $(CXXFLAGS)
+
+VoiceAssistant.o: VoiceAssistant.cpp
+	$(CPP) -c VoiceAssistant.cpp -o VoiceAssistant.o $(CXXFLAGS)
+
+TechProductList.o: TechProductList.cpp
+	$(CPP) -c TechProductList.cpp -o TechProductList.o $(CXXFLAGS)
+
+Headphones.o: Headphones.cpp
+	$(CPP) -c Headphones.cpp -o Headphones.o $(CXXFLAGS)
+
+HeadphonesList.o: HeadphonesList.cpp
+	$(CPP) -c HeadphonesList.cpp -o HeadphonesList.o $(CXXFLAGS)
+
+Laptops.o: Laptops.cpp
+	$(CPP) -c Laptops.cpp -o Laptops.o $(CXXFLAGS)
+
+LaptopsList.o: LaptopsList.cpp
+	$(CPP) -c LaptopsList.cpp -o LaptopsList.o $(CXXFLAGS)
