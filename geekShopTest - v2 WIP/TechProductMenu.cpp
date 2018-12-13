@@ -1,21 +1,14 @@
 /****************************************************
-* AUTHOR: Emiliia Dyrenkova
+* AUTHORS: Emiliia Dyrenkova, Nikki Perez, Samuel Nguyen
 * COURSE: CS 150: C++ Programming 1
 * SECTION: Tue Th 11:00-12:50
-* IC (PROJECT)#: IC26
-* LAST MODIFIED: 11/28/18
+* FINAL PROJECT
 *****************************************************/
 /*****************************************************************************
 * Tech shop
-*****************************************************************************
-* PROGRAM DESCRIPTION:
-* Demoes Drone and Drone List class
-*****************************************************************************
-* ALL IMPORTED LIBRARIES NEEDED AND PURPOSE:
-* cstdlib, iostream, string, Drone.h, DroneList.h
 *****************************************************************************/
 #include <iostream>
-#include<iomanip>
+#include <iomanip>
 #include <string>
 
 #include "TechProduct.h"
@@ -24,6 +17,8 @@
 #include "VoiceAssistant.h"
 #include "Headphones.h"
 #include "Laptops.h"
+#include "Battery.h"
+#include "Camera.h"
 
 
 void addToTheList(TechProductList& list, string productType){
@@ -143,6 +138,52 @@ void addToTheList(TechProductList& list, string productType){
         }
         else cout<<"Added!\n";
     }
+    else if(productType=="Battery"){
+        Battery *product = new Battery();
+        int capacity;
+        cout << "Enter Brand: ";
+		getline(cin, brand);
+		cout << "Enter Model: ";
+		getline(cin, model);
+		cout << "Enter Capacity: ";
+		cin >> capacity;
+		cout << "Enter Quantity: ";
+		cin >> quantity;
+		cout << "Enter Price $";
+		cin >> price;
+		product->setBrand(brand);
+		product->setModel(model);
+		product->setPrice(price);
+		product->setQuantity(quantity);
+		product->setCapacity(capacity);
+        if(!list.addTechProduct(product)){
+        cout<<"The list is full!\n";
+        }
+        else cout<<"Added!\n";
+    }
+    else if(productType=="Camera"){
+        Camera *product = new Camera();
+        string aperture;
+        cout << "Enter Brand: ";
+		getline(cin, brand);
+		cout << "Enter Model: ";
+		getline(cin, model);
+		cout << "Enter Aperture: ";
+		cin >> aperture;
+		cout << "Enter Quantity: ";
+		cin >> quantity;
+		cout << "Enter Price $";
+		cin >> price;
+		product->setBrand(brand);
+		product->setModel(model);
+		product->setPrice(price);
+		product->setQuantity(quantity);
+		product->setAperture(aperture);
+        if(!list.addTechProduct(product)){
+        cout<<"The list is full!\n";
+        }
+        else cout<<"Added!\n";
+    }
 }
 
 void innerMenu(TechProductList& list, string productType){
@@ -206,6 +247,8 @@ int main(int argv, char* argc[])
     TechProductList VAList;
     TechProductList HeadphonesList;
     TechProductList LaptopsList;
+    TechProductList BatteryList;
+    TechProductList CameraList;
     
 	int userChoice = 0;
 	do {
@@ -244,10 +287,10 @@ int main(int argv, char* argc[])
             innerMenu(LaptopsList,"Laptop");
             break;
         case 5:
-            //innerMenu(CameraList,"Camera");
+            innerMenu(CameraList,"Camera");
             break;
         case 6:
-            //innerMenu(BatteryList,"Battery");
+            innerMenu(BatteryList,"Battery");
             break;
     
 		case 7:

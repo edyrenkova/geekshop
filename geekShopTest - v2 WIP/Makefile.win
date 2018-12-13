@@ -5,8 +5,8 @@ CPP  = g++.exe
 CC   = gcc.exe
 WINDRES = windres.exe
 RES  = 
-OBJ  = Drone.o TechProductMenu.o TechProduct.o VoiceAssistant.o TechProductList.o Headphones.o HeadphonesList.o Laptops.o LaptopsList.o $(RES)
-LINKOBJ  = Drone.o TechProductMenu.o TechProduct.o VoiceAssistant.o TechProductList.o Headphones.o HeadphonesList.o Laptops.o LaptopsList.o $(RES)
+OBJ  = Drone.o TechProductMenu.o TechProduct.o VoiceAssistant.o TechProductList.o Headphones.o Laptops.o Battery.o Camera.o $(RES)
+LINKOBJ  = Drone.o TechProductMenu.o TechProduct.o VoiceAssistant.o TechProductList.o Headphones.o Laptops.o Battery.o Camera.o $(RES)
 LIBS =  -L"C:/Dev-Cpp/lib"  
 INCS =  -I"C:/Dev-Cpp/include" 
 CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include" 
@@ -44,11 +44,11 @@ TechProductList.o: TechProductList.cpp
 Headphones.o: Headphones.cpp
 	$(CPP) -c Headphones.cpp -o Headphones.o $(CXXFLAGS)
 
-HeadphonesList.o: HeadphonesList.cpp
-	$(CPP) -c HeadphonesList.cpp -o HeadphonesList.o $(CXXFLAGS)
-
 Laptops.o: Laptops.cpp
 	$(CPP) -c Laptops.cpp -o Laptops.o $(CXXFLAGS)
 
-LaptopsList.o: LaptopsList.cpp
-	$(CPP) -c LaptopsList.cpp -o LaptopsList.o $(CXXFLAGS)
+Battery.o: Battery.cpp
+	$(CPP) -c Battery.cpp -o Battery.o $(CXXFLAGS)
+
+Camera.o: Camera.cpp
+	$(CPP) -c Camera.cpp -o Camera.o $(CXXFLAGS)

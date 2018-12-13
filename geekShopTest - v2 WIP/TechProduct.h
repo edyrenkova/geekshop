@@ -14,8 +14,6 @@ protected:
 	string m_model;
 	int m_quantity; 
 	double m_price;
-	
-	
 
 public:
     TechProduct();
