@@ -154,7 +154,7 @@ void innerMenu(TechProductList& list, string productType){
 		cout <<"1)  Add a new "<<productType<<" to Inventory" << endl;
 		cout <<"2)  Remove a "<<productType<<" from Inventory" << endl;
 		cout <<"3)  Update a "<<productType<<" from Inventory" << endl;
-		cout <<"4)  Display all "<<productType<<" in Inventory" << endl;
+		cout <<"4)  Display all "<<productType<<"s in Inventory" << endl;
 		cout <<"5)  Exit" << endl;
 		cout << ">> ";
 		cin >> userChoice;
