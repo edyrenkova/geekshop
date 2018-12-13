@@ -89,6 +89,60 @@ void addToTheList(TechProductList& list, string productType){
         }
         else cout<<"Added!\n";
     }
+    else if(productType=="Headphone"){
+        Headphones *product = new Headphones();
+        int impedance;
+        string driverSize;
+        cout << "Enter Brand: ";
+		getline(cin, brand);
+		cout << "Enter Model: ";
+		getline(cin, model);
+		cout << "Enter driver size (small, medium, large): ";
+		cin >> driverSize;
+		cout << "Enter Impedance: ";
+		cin >> impedance;
+		cout << "Enter Quantity: ";
+		cin >> quantity;
+		cout << "Enter Price $";
+		cin >> price;
+		product->setBrand(brand);
+		product->setModel(model);
+		product->setPrice(price);
+		product->setQuantity(quantity);
+		product->setImpedance(impedance);
+		product->setDriverSize(driverSize);
+        if(!list.addTechProduct(product)){
+        cout<<"The list is full!\n";
+        }
+        else cout<<"Added!\n";
+    }
+    else if(productType=="Laptop"){
+        Laptops *product = new Laptops();
+        int storage;
+        string cpu;
+        cout << "Enter Brand: ";
+		getline(cin, brand);
+		cout << "Enter Model: ";
+		getline(cin, model);
+		cout << "Enter CPU name: ";
+		cin >> cpu;
+		cout << "Enter Storage Size (in GB): ";
+		cin >> storage;
+		cout << "Enter Quantity: ";
+		cin >> quantity;
+		cout << "Enter Price $";
+		cin >> price;
+		product->setBrand(brand);
+		product->setModel(model);
+		product->setPrice(price);
+		product->setQuantity(quantity);
+		product->setStorage(storage);
+		product->setCpu(cpu);
+        if(!list.addTechProduct(product)){
+        cout<<"The list is full!\n";
+        }
+        else cout<<"Added!\n";
+    }
 }
 
 void innerMenu(TechProductList& list, string productType){
@@ -117,29 +171,33 @@ void innerMenu(TechProductList& list, string productType){
 			cout << "\nWhich ID# would you like to remove? (or -1 to cancel) >> ";
 			cin >> id;
 			if(!list.removeTechProduct(id)){
-                cout<<"There is no such drone in the inventory\n";
+                cout<<"There is no such " << productType << " in the inventory\n";
             }
             else{
                 cout<<"Removed!\n";
             }
 			break;
-		case 3:/*
+		case 3:
             cout << "\nWhich ID# would you like to update? (or -1 to cancel) >> ";
 			cin >> id;
-            if(!drones.updateDrone(id)){
-                cout<<"There is no such drone in the inventory\n";
-            }*/
+            if(!list.updateTechProduct(id))
+            {
+                cout<<"There is no such " << productType << " in the inventory\n";
+            }
 			break;
 		case 4:
+            cout << endl;
             list.print();
+            cout << endl;
 			break;
 		case 5:
-			cout << "Bzzz, bye!!!" << endl;
+			cout << endl << "Bzzz, bye!!!" << endl;
 			break;
 		}
-
+    cout << endl;
 	} while (userChoice != 5);
-	cout << endl;
+
+	
 }
 
 int main(int argv, char* argc[])
@@ -162,8 +220,8 @@ int main(int argv, char* argc[])
 		cout << "** 2)  Manage Voice Assistants                                        **" << endl;
         cout << "** 3)  Manage Headphones                                              **" << endl;
         cout << "** 4)  Manage Laptops                                                 **" << endl;
-        cout << "** 5)  Manage Camera                                                  **" << endl;
-        cout << "** 6)  Manage Battery                                                 **" << endl;
+        cout << "** 5)  Manage Cameras                                                 **" << endl;
+        cout << "** 6)  Manage Batteries                                               **" << endl;
 		cout << "** 7)  Exit                                                           **" << endl;
 		cout << "************************************************************************" << endl;
 		cout << ">> ";
@@ -180,25 +238,26 @@ int main(int argv, char* argc[])
 			innerMenu(VAList,"Voice Assistant");
 			break;
         case 3:
-            innerMenu(HeadphonesList,"Headphones");
+            innerMenu(HeadphonesList,"Headphone");
             break;
         case 4:
-            innerMenu(LaptopsList,"Laptops");
+            innerMenu(LaptopsList,"Laptop");
             break;
         case 5:
-
+            //innerMenu(CameraList,"Camera");
             break;
         case 6:
-
+            //innerMenu(BatteryList,"Battery");
             break;
     
 		case 7:
             cout<<"Bye\n";
 			break;
 		}
+    
+    cout << endl;
+	} while (userChoice != 7);
 
-	} while (userChoice != 3);
-	cout << endl;
 	system("PAUSE");
 	return EXIT_SUCCESS;
 }
