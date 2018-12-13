@@ -21,11 +21,12 @@ bool Drone::operator==(const Drone& other) //compares only brand, model, camera,
 	&& m_price == other.m_price;
 }
 
-void Drone::print()
+ostream& operator<<(ostream& os, const Drone& d)
 {
-	cout << "Drone [ID#" << m_id << ", Brand=" << m_brand << ", Model=" << m_model << ", Time per Charge=" << m_timePerCharge
-		<< " min, Camera=" << m_camera << ", Signal diameter=" << m_signalDiameter << " miles, Quantity=" << m_quantity
-		<< ", Price=$" << m_price << "]";
+	os << "Drone [ID#" << d.m_id << ", Brand=" << d.m_brand << ", Model=" << d.m_model << ", Time per Charge=" << d.m_timePerCharge
+		<< " min, Camera=" << d.m_camera << ", Signal diameter=" << d.m_signalDiameter << " miles, Quantity=" << d.m_quantity
+		<< ", Price=$" << d.m_price << "]";
+	return os;
 }
 
 void Drone::update(){

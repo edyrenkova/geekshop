@@ -15,7 +15,7 @@ class DroneList
         
     public:
         DroneList();
-        bool addDrone(Drone d);
+        void addDrone();
         bool removeDrone(int id);
         bool updateDrone(int id);
         friend ostream& operator<<(ostream&, const DroneList&);

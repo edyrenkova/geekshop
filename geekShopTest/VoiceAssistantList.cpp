@@ -1,28 +1,30 @@
-#include "DroneList.h"
-#include <string>
-DroneList::DroneList(){
+#include "VoiceAssistantList.h"
+#include <iostream>
+using namespace std;
+VoiceAssistantList::VoiceAssistantList(){
     m_count=0;
 }
-void DroneList::addDrone(){
+void VoiceAssistantList::addVoiceAssistant(){
+    
     int quantity;
-    string model, brand, camera;
-    double time, diameter, price;
+    string model, brand, color, searchEngine;
+    double price, weight;
     cin.ignore(INT_MAX, '\n');
 	cout << "Enter Brand: ";
 	getline(cin, brand);
 	cout << "Enter Model: ";
 	getline(cin, model);
-	cout << "Enter camera: ";
-	getline(cin, camera);
-	cout << "Enter Lifespan per Charge: ";
-	cin >> time;
-	cout << "Enter Diameter of Signal Reception: ";
-	cin >> diameter;
+	cout << "Enter Search Engine: ";
+	getline(cin, searchEngine);
+	cout << "Enter Color: ";
+	cin >> color;
+	cout << "Enter Weight: ";
+	cin >> weight;
 	cout << "Enter Quantity: ";
 	cin >> quantity;
 	cout << "Enter Price $";
 	cin >> price;
-	Drone d(brand, model, time, diameter, camera, price, quantity);
+	VoiceAssistant d(brand, model, searchEngine, color, weight, price, quantity);
     if(m_count<SIZE){
         m_list[m_count++]=d;
         cout<<"Added!\n";
@@ -32,7 +34,7 @@ void DroneList::addDrone(){
     }
 }
 
-bool DroneList::removeDrone(int id){
+bool VoiceAssistantList::removeVoiceAssistant(int id){
     int index;
     bool found=false;
     for(int i=0;i<SIZE;i++){
@@ -50,9 +52,10 @@ bool DroneList::removeDrone(int id){
     }
     return found;
 }
-bool DroneList::updateDrone(int id){
-    string brand, model, camera;
-	double price, time, diameter;
+
+bool VoiceAssistantList::updateVoiceAssistant(int id){
+    string brand, model, color, search;
+	double weight, price;
 	int quantity;
     for(int i=0;i<m_count;i++){
         if(m_list[i].getId()==id){
@@ -63,9 +66,9 @@ bool DroneList::updateDrone(int id){
     return false;
 }
 
-ostream& operator<<(ostream& os, const DroneList& dl){
-    for(int i=0;i<dl.m_count;i++){
-        os<<dl.m_list[i]<<"\n";
+ostream& operator<<(ostream& os, const VoiceAssistantList& va){
+    for(int i=0;i<va.m_count;i++){
+        os<<va.m_list[i]<<endl;
     }
     return os;
 }
