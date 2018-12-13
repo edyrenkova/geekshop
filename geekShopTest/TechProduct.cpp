@@ -5,7 +5,7 @@ int TechProduct::s_nextId = 10000;
 
 TechProduct::TechProduct()
 {
-	m_id = ++s_nextId;
+	m_id = 0;
 	m_brand = "";
 	m_model = "";
 	m_quantity=0; 

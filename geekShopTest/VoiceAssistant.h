@@ -27,7 +27,7 @@ public:
 	inline void setWeight(double weight) { m_weight = weight; }
 
 	bool operator==(const VoiceAssistant& other);
-	void print();
+    friend ostream& operator<<(ostream&, const VoiceAssistant&);
 };
 
 #endif

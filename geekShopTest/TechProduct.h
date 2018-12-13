@@ -15,8 +15,6 @@ protected:
 	int m_quantity; 
 	double m_price;
 	
-	
-
 public:
     TechProduct();
 	TechProduct(string brand, string model, double price, int quantity);
@@ -31,8 +29,6 @@ public:
 	inline void setModel(string model) { m_model = model; }
 	inline void setPrice(double price) { m_price = price; }
 	inline void setQuantity(int quantity) { m_quantity = quantity; }
-    virtual void update()=0;
-    virtual void print()=0;
 };
 
 #endif
